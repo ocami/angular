@@ -5,4 +5,14 @@
        *ngIf="appareilStatus === 'éteint'"></div>
   <h4 [ngStyle]="{color: getColor()}">Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
   <input type="text" class="form-control" [(ngModel)]="appareilName">
+  <button
+    (click)="onSwitch()"
+    *ngIf="appareilStatus === 'éteint'"
+    class="btn btn-sm btn-default"
+  >Allumer</button>
+  <button
+    (click)="onSwitch()"
+    *ngIf="appareilStatus === 'allumé'"
+    class="btn btn-sm btn-default"
+  >Eteindre</button>
 </li>
